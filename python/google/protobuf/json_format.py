@@ -91,6 +91,7 @@ class ParseError(Error):
 def MessageToJson(
     message,
     including_default_value_fields=False,
+    use_oneof_name=False,
     preserving_proto_field_name=False,
     indent=2,
     sort_keys=False,
@@ -125,6 +126,7 @@ def MessageToJson(
   """
   printer = _Printer(
       including_default_value_fields,
+      use_oneof_name,
       preserving_proto_field_name,
       use_integers_for_enums,
       descriptor_pool,
@@ -135,6 +137,7 @@ def MessageToJson(
 def MessageToDict(
     message,
     including_default_value_fields=False,
+    use_oneof_name=False,
     preserving_proto_field_name=False,
     use_integers_for_enums=False,
     descriptor_pool=None,
@@ -162,6 +165,7 @@ def MessageToDict(
   """
   printer = _Printer(
       including_default_value_fields,
+      use_oneof_name,
       preserving_proto_field_name,
       use_integers_for_enums,
       descriptor_pool,
